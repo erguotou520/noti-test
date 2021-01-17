@@ -29,14 +29,14 @@ jobs:
       - name: Build
         run: yarn build
       - name: Notification
-        uses: erguotou520/instant-access-action@0.0.3
+        uses: erguotou520/instant-access-action
         if: ${{ success() }}
         with:
           channel: 'd255d62caef24a3bb66c3465dad70407'
           head: '{{branchName}}部署完成'
           body: '{{author}} commit "{{commitMessage}}" on {{repositoryName}}#{{branchName}} branch at {{commitTime}}'
       - name: Notification
-        uses: erguotou520/instant-access-action@0.0.3
+        uses: erguotou520/instant-access-action
         if: ${{ failure() }}
         with:
           channel: 'd255d62caef24a3bb66c3465dad70407'
